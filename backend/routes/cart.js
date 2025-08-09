@@ -11,7 +11,7 @@ router.put("/add-to-cart" , authenticateToken , async (req, res) => {
         if(isBookincart) {
             return res.json({
                 status : " Success",
-                message : "Book is already in your favorite list",
+                message : "Book is already in your favorite cart",
             });
         }
             await User.findByIdAndUpdate(id , {

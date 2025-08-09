@@ -1,19 +1,19 @@
 const jwt = require('jsonwebtoken');
 
 const authenticateToken = (req, res, next) => {
-    const authHeader = req.headers['authorization']; // fixed: use `headers` not `header`
+    const authHeader = req.headers['authorization']; // Bearer <token>
     const token = authHeader && authHeader.split(' ')[1];
 
-    if (token == null) {
-        return res.status(401).json({ message: "Unauthorized" });
+    if (!token) {
+        return res.status(401).json({ message: "Unauthorized: Token missing" });
     }
 
-    jwt.verify(token, "bookStore123", (err, user) => {
+    jwt.verify(token, "bookStore123", (err, decoded) => {
         if (err) {
-            return res.status(403).json({ message: "Token is invalid" });
+            return res.status(403).json({ message: "Forbidden: Token is invalid" });
         }
 
-        req.user = user; // store decoded data
+        req.user = decoded; // decoded will contain { id, email, role, ... }
         next();
     });
 };

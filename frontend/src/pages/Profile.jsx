@@ -12,16 +12,14 @@ const Profile = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if token exists in localStorage after refresh
     const token = localStorage.getItem("token");
     const id = localStorage.getItem("id");
 
     if (token && id) {
-      // Restore Redux state
       dispatch(authAction.login());
       fetchProfile(token, id);
     } else {
-      navigate("/login"); // redirect if no token
+      navigate("/login");
     }
   }, []);
 
@@ -33,7 +31,6 @@ const Profile = () => {
           id: id,
         },
       });
-      console.log("Fetched profile:", res.data);
       setProfile(res.data);
     } catch (err) {
       console.error("Error fetching profile:", err);
@@ -41,13 +38,27 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-zinc-900 px-2 md:px-12 flex flex-col md:flex-row h-screen py-8 text-white">
+    <div className="bg-zinc-900 px-4 md:px-12 flex flex-col md:flex-row h-screen py-8 text-white">
       <div className="w-full md:w-1/6">
         <Sidebar data={profile} />
       </div>
-      <div className="w-full md:w-5/6">
-        <Outlet />
-      </div>
+
+      <main
+        className="w-full md:w-5/6 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 rounded-xl p-6 md:p-12 shadow-lg border border-zinc-700 overflow-auto"
+        style={{
+          scrollbarWidth: "none", // Firefox
+          msOverflowStyle: "none", // IE 10+
+        }}
+      >
+        <Outlet context={{ profile }} />
+
+        {/* Hide scrollbar for Webkit browsers */}
+        <style>{`
+          main::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
+      </main>
     </div>
   );
 };
