@@ -1,18 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
+import { authAction } from "../../store/auth";
+import { useDispatch } from "react-redux";
 
 const Sidebar = ({ data }) => {
-  if (!data)
-    return (
-      <p className="text-white p-4 select-none">Loading...</p>
-    );
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  if (!data) {
+    return <p className="text-white p-4 select-none">Loading...</p>;
+  }
 
   return (
     <div className="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-6 rounded-xl flex flex-col items-center min-h-full shadow-lg border border-zinc-700">
       {data.avatar ? (
         <img
-          src={data.avatar.startsWith("http") ? data.avatar : `http://localhost:1000/${data.avatar}`}
+          src={
+            data.avatar.startsWith("http")
+              ? data.avatar
+              : `http://localhost:1000/${data.avatar}`
+          }
           alt="User Avatar"
           className="h-[12vh] w-[12vh] rounded-full object-cover border-2 border-zinc-700 shadow-md"
         />
@@ -22,8 +30,12 @@ const Sidebar = ({ data }) => {
         </div>
       )}
 
-      <p className="mt-4 text-2xl text-zinc-100 font-semibold select-text">{data.username || "Guest"}</p>
-      <p className="mt-1 text-sm text-zinc-400 font-medium select-text">{data.email || "No email"}</p>
+      <p className="mt-4 text-2xl text-zinc-100 font-semibold select-text">
+        {data.username || "Guest"}
+      </p>
+      <p className="mt-1 text-sm text-zinc-400 font-medium select-text">
+        {data.email || "No email"}
+      </p>
 
       <div className="w-full mt-6 h-[1px] bg-zinc-700"></div>
 
@@ -50,8 +62,12 @@ const Sidebar = ({ data }) => {
         <button
           className="mt-8 bg-red-600 hover:bg-red-700 w-full py-3 rounded-lg text-white font-semibold flex items-center justify-center gap-3 transition-all duration-300 shadow-md hover:shadow-lg"
           onClick={() => {
-            localStorage.clear();
-            window.location.href = "/login";
+            dispatch(authAction.logout());
+            dispatch(authAction.changeRole("user"));
+            localStorage.removeItem("id");
+            localStorage.removeItem("token");
+            localStorage.removeItem("role");
+            navigate("/");
           }}
           type="button"
         >
