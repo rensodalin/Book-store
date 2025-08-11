@@ -118,21 +118,23 @@ const BookDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-900 text-white px-6 py-12 md:px-24 md:py-20 flex flex-col md:flex-row gap-12 relative">
+    <div className="min-h-screen bg-zinc-900 text-white px-6 py-12 md:px-24 md:py-20 flex flex-col md:flex-row gap-12 relative bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900">
       {/* Back button */}
-      <button
-        onClick={() => navigate(-1)}
-        className="absolute top-6 left-6 md:top-10 md:left-10 text-sm text-white flex items-center gap-1 hover:underline mt-16"
-      >
-        <IoArrowBack size={20} /> Back
-      </button>
+      {/* Back button */}
+<button
+  onClick={() => navigate(-1)}
+  className="absolute top-6 left-6 md:top-10 md:left-10  flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-800/70 text-white border border-zinc-700 backdrop-blur-md hover:bg-zinc-700 hover:scale-105 transition-all duration-200 shadow-lg"
+>
+  <IoArrowBack size={20} />
+  <span className="hidden sm:inline">Back</span>
+</button>
 
       {/* Image section */}
-      <div className="bg-zinc-800 rounded-lg p-6 flex items-center justify-center md:w-1/2 shadow-lg relative">
+      <div className="bg-zinc-800 rounded-lg p-6 flex items-center mt-10 justify-center md:w-1/2 shadow-lg relative bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900">
         <img
           src={data?.url || ""}
           alt={data?.title || "Book cover"}
-          className="max-h-[75vh] w-auto object-contain rounded-md"
+          className="max-h-[75vh] w-auto object-contain rounded-md text-yellow-200"
         />
 
         {/* Icons for users */}
@@ -160,7 +162,7 @@ const BookDetail = () => {
       <div className="md:w-1/2 flex flex-col justify-center">
         {!isEditing ? (
           <>
-            <h1 className="text-5xl font-extrabold mb-6 leading-tight">{data?.title}</h1>
+            <h1 className="text-5xl font-extrabold mb-6 leading-tight text-yellow-300">{data?.title}</h1>
             <p className="text-xl mb-3">
               <span className="font-semibold">Author:</span> {data?.author}
             </p>

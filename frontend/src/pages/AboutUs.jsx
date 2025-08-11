@@ -5,12 +5,12 @@ const AboutUs = () => {
   return (
     <div className='min-h-screen bg-zinc-900 text-zinc-100'>
       {/* Hero Section */}
-      <div className='relative bg-gradient-to-r from-blue-900 to-purple-900 py-20 px-4'>
+      <div className='relative bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900 py-20 px-4'>
         <div className='max-w-6xl mx-auto text-center'>
-          <h1 className='text-4xl md:text-6xl font-bold mb-6 text-white'>
+          <h1 className='text-4xl md:text-6xl font-bold mb-6 text-yellow-300'>
             About Our Story
           </h1>
-          <p className='text-xl md:text-2xl text-zinc-200 max-w-3xl mx-auto leading-relaxed'>
+          <p className='text-xl md:text-2xl text-yellow-100 max-w-3xl mx-auto leading-relaxed'>
             Connecting book lovers with their next great adventure, one page at a time
           </p>
         </div>
@@ -23,7 +23,7 @@ const AboutUs = () => {
         <section className='mb-16'>
           <div className='grid md:grid-cols-2 gap-12 items-center'>
             <div>
-              <h2 className='text-3xl md:text-4xl font-semibold mb-6 text-zinc-300'>
+              <h2 className='text-3xl md:text-4xl font-semibold mb-6 text-yellow-300'>
                 Our Mission
               </h2>
               <p className='text-lg text-zinc-400 mb-6 leading-relaxed'>
@@ -43,7 +43,7 @@ const AboutUs = () => {
 
         {/* What We Offer */}
         <section className='mb-16'>
-          <h2 className='text-3xl md:text-4xl font-semibold mb-12 text-center text-zinc-300'>
+          <h2 className='text-3xl md:text-4xl font-semibold mb-12 text-center text-yellow-300'>
             What We Offer
           </h2>
           <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
@@ -81,7 +81,7 @@ const AboutUs = () => {
         {/* Our Story */}
         <section className='mb-16'>
           <div className='bg-zinc-800 rounded-lg p-8 md:p-12'>
-            <h2 className='text-3xl md:text-4xl font-semibold mb-8 text-center text-zinc-300'>
+            <h2 className='text-3xl md:text-4xl font-semibold mb-8 text-center text-yellow-300'>
               Our Story
             </h2>
             <div className='grid md:grid-cols-2 gap-12 items-center'>
@@ -96,7 +96,7 @@ const AboutUs = () => {
                   Our team carefully selects each title in our collection, ensuring quality and diversity in every genre. We're not just selling books - we're fostering a love of reading and learning.
                 </p>
               </div>
-              <div className='bg-gradient-to-br from-blue-900 to-purple-900 rounded-lg p-8 text-center'>
+              <div className='bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900 rounded-lg p-8 text-center'>
                 <div className='mb-6'>
                   <span className='text-4xl font-bold text-white'>50,000+</span>
                   <p className='text-zinc-300 mt-2'>Happy Customers</p>
@@ -116,7 +116,7 @@ const AboutUs = () => {
 
         {/* Our Values */}
         <section className='mb-16'>
-          <h2 className='text-3xl md:text-4xl font-semibold mb-12 text-center text-zinc-300'>
+          <h2 className='text-3xl md:text-4xl font-semibold mb-12 text-center text-yellow-300'>
             Our Values
           </h2>
           <div className='grid md:grid-cols-3 gap-8'>
@@ -151,18 +151,18 @@ const AboutUs = () => {
         </section>
 
         {/* Call to Action */}
-        <section className='text-center bg-gradient-to-r from-blue-900 to-purple-900 rounded-lg p-12'>
-          <h2 className='text-3xl md:text-4xl font-semibold mb-6 text-white'>
+        <section className='text-center bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900 rounded-lg p-12'>
+          <h2 className='text-3xl md:text-4xl font-semibold mb-6 text-yellow-300'>
             Join Our Reading Community
           </h2>
           <p className='text-xl text-zinc-200 mb-8 max-w-2xl mx-auto'>
             Ready to discover your next great read? Browse our collection and become part of a community that celebrates the magic of books.
           </p>
           <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-            <button className='bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-zinc-100 transition-colors'>
+            <button className='bg-yellow-400 text-black px-8 py-3 rounded-lg font-semibold hover:bg-zinc-100 transition-colors'>
               Browse Books
             </button>
-            <button className='border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors'>
+            <button className='border-2 border-yellow-300 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors'>
               Contact Us
             </button>
           </div>

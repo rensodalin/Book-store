@@ -30,7 +30,7 @@ const Favourites = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 flex items-center justify-center p-6">
+      <div className="min-h-screen  flex items-center justify-center p-6 bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900">
         <div className="text-center">
           <div className="relative mb-6">
             <div className="w-16 h-16 border-4 border-gray-300 border-t-yellow-400 rounded-full animate-spin mx-auto"></div>
@@ -43,7 +43,7 @@ const Favourites = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-6 md:p-12 rounded-xl border border-zinc-700 shadow-lg text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900 p-6 md:p-12 rounded-xl border border-zinc-700 shadow-lg text-white">
       <h2 className="text-4xl font-bold text-yellow-300 mb-10 text-center drop-shadow-lg">
         My Favorite Books
       </h2>

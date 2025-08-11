@@ -168,7 +168,7 @@ const Navbar = () => {
   const filteredLinks = getFilteredLinks();
 
   return (
-    <div className="bg-zinc-800 text-white px-6 py-4">
+    <div className="bg-zinc-800 text-white px-6 py-4 bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900">
       <div className="flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
           <img
@@ -176,7 +176,7 @@ const Navbar = () => {
             alt="BookStore Logo"
             className="h-12 w-12 object-cover rounded-full border border-white"
           />
-          <h1 className="text-2xl font-semibold">BookStore</h1>
+          <h1 className="text-2xl font-semibold text-yellow-300">BookStore</h1>
         </Link>
 
         {/* Hamburger (mobile) */}

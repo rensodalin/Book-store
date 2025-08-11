@@ -116,7 +116,7 @@ const Sidebar = ({ data }) => {
   const sidebarLinks = getSidebarLinks();
 
   return (
-    <div className="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-6 rounded-xl flex flex-col items-center min-h-full shadow-lg border border-zinc-700">
+    <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900 p-6 rounded-xl flex flex-col items-center min-h-full shadow-lg border border-zinc-700">
       {data.avatar ? (
         <img
           src={

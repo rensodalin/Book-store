@@ -119,7 +119,7 @@ const Profile = () => {
   }
 
   return (
-    <div className="bg-zinc-900 px-4 md:px-12 flex flex-col md:flex-row h-screen py-8 text-white gap-6">
+    <div className="bg-zinc-900 px-4 md:px-12 flex flex-col md:flex-row h-screen py-8 text-white gap-6 bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900">
       {/* Sidebar */}
       <aside className="w-full md:w-1/6">
         <Sidebar data={profile} />
